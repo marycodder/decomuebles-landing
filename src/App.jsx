@@ -1,9 +1,65 @@
-import React from 'react';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
-  return (
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+    return (
     <div className="landing-container">
+      {/* Barra de Navegación Header */}
+      <header className="navbar">
+        <button className="menu-toggle-btn" onClick={toggleMenu} aria-label="Abrir Menú">
+          ☰
+        </button>
+        <div className="logo-title">Deco Muebles LG</div>
+      </header>
+
+      {/* Fondo oscuro al abrir el menú (Overlay) */}
+      {isMenuOpen && <div className="menu-overlay" onClick={toggleMenu}></div>}
+
+      {/* Menú Lateral Desplegable */}
+      <aside className={`sidebar-menu ${isMenuOpen ? 'open' : ''}`}>
+        <div className="sidebar-header">
+          <span>Deco Muebles LG</span>
+          <button className="close-btn" onClick={toggleMenu}>✕</button>
+        </div>
+
+        <div className="search-box">
+          <input type="text" placeholder="Buscar en Deco Muebles LG..." />
+        </div>
+
+        <p className="sidebar-section-title">Categorías de productos</p>
+        <ul className="sidebar-categories">
+          <li><a href="#cocinas" onClick={toggleMenu}>Cocinas a Medida</a></li>
+          <li><a href="#closets" onClick={toggleMenu}>Walk-in Closets y Clósets</a></li>
+          <li><a href="#banos" onClick={toggleMenu}>Vanitorios y Baños</a></li>
+          <li><a href="#especial" onClick={toggleMenu}>Mobiliario Especial / Muebles TV</a></li>
+          <li><a href="#galeria" onClick={toggleMenu}>Trabajos Entregados</a></li>
+        </ul>
+
+        <div className="sidebar-divider"></div>
+
+        <p className="sidebar-section-title">Contacto e Info</p>
+        <ul className="sidebar-categories">
+          <li>
+            <a 
+              href="https://wa.me/56973754807" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="whatsapp-menu-link"
+            >
+              💬 Cotizar por WhatsApp
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      {/* AQUÍ DEJA TODO EL RESTO DE TU CÓDIGO (Hero, Servicios, Galería, Footer) */}
+
       {/* Encabezado Principal */}
       <header className="hero">
         <div className="hero-content">
