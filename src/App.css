@@ -77,6 +77,59 @@ body {
   text-align: center;
 }
 
+.portfolio-location {
+  font-size: 0.85rem;
+  color: #2d4030;
+  font-weight: 600;
+  margin-top: -0.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.portfolio-card p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Asegura que el contenedor use un buen ancho */
+.landing-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Fuerza a la imagen a no salir nunca de su tarjeta */
+.portfolio-img {
+  width: 100%;
+  max-width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Ajuste de las tarjetas */
+.portfolio-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  overflow: hidden; /* Evita que las imágenes se salgan */
+  box-sizing: border-box;
+}
+
+/* Grilla adaptable */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
 .copyright {
   margin-top: 2rem;
   font-size: 0.85rem;

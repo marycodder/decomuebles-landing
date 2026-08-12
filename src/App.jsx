@@ -44,22 +44,38 @@ function App() {
       {/* Galería / Proyectos */}
       <section className="portfolio">
         <h2>Trabajos Entregados</h2>
-        <div className="portfolio-grid">
-          <div className="portfolio-card">
-            <div className="portfolio-info">
-              <h4>Cocina Verde Glaciar</h4>
-              <p>Mueble en melamina verde glaciar con cubierta de cuarzo blanco galaxy. Cliente satisfecho.</p>
-            </div>
-          </div>
-          <div className="portfolio-card">
-            <div className="portfolio-info">
-              <h4>Walk-in Closet</h4>
-              <p>Distribución funcional y acabados personalizados a medida.</p>
-            </div>
+      <div className="portfolio-grid">
+        <div className="portfolio-card">
+          <div className="portfolio-info">
+            <h4>Cocina Verde Glaciar</h4>
+            <p>Mueble en melamina verde glaciar con cubierta de cuarzo blanco galaxy. Cliente satisfecho.</p>
           </div>
         </div>
-      </section>
 
+        <div className="portfolio-card">
+          <div className="portfolio-info">
+            <h4>Walk-in Closet</h4>
+            <p>Distribución funcional y acabados personalizados a medida.</p>
+          </div>
+        </div>
+
+        <div className="portfolio-card">
+          <img 
+            src="/cocina-roble-cava.jpg" 
+            alt="Cocina Roble Cava y Blanco Alto Brillo" 
+            className="portfolio-img" 
+          />
+          <div className="portfolio-info">
+            <h4>Cocina Roble Cava y Blanco Alto Brillo</h4>
+            <p className="portfolio-location">📍 Curauma, Valparaíso</p>
+            <p>
+              Elegante diseño en dos tonos, que le aportan a tu cocina armonía, con la combinación de puertas superiores en melamina blanca alto brillo de 18mm, puertas inferiores en roble cava de 18mm y cubierta de cuarzo blanco galaxy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+      
       {/* Pie de página y Contacto */}
       <footer className="footer">
         <h3>¿Tienes un proyecto en mente?</h3>
