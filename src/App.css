@@ -1,268 +1,548 @@
+/* =========================
+   PALETA DE COLORES
+   ========================= */
+
 :root {
-  --primary-color: #2b3a2f;
-  --accent-color: #25d366;
-  --bg-color: #f8f9fa;
-  --text-color: #1a1a1a;
+  /* Nueva paleta Deco Muebles LG */
+  --light-blue: #C9DFF2;
+  --olive: #475907;
+  --mustard: #D9BE36;
+  --dark-brown: #592D05;
+  --orange: #F2A663;
+
+  /* Uso dentro de la interfaz */
+  --navy: var(--dark-brown);
+  --blue: var(--light-blue);
+  --taupe: var(--orange);
+  --sand: var(--light-blue);
+  --brown: var(--olive);
+
+  --background: #fffdf9;
+  --white: #ffffff;
+
+  --text-primary: var(--dark-brown);
+  --text-secondary: var(--olive);
+
+  --whatsapp: #25d366;
 }
 
-body {
-  margin: 0;
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-}
+/* =========================
+   CONTENEDOR PRINCIPAL
+   ========================= */
 
 .landing-container {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  background-color: var(--background);
 }
 
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+.navbar {
+  width: 100%;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1rem clamp(1.5rem, 5vw, 5rem);
+
+  background-color: var(--navy);
+  color: var(--white);
+}
+
+
+/* Nombre de la empresa */
+
+.logo-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  margin: 0;
+
+  font-size: 1.2rem;
+  font-weight: 700;
+
+  color: var(--white);
+  white-space: nowrap;
+}
+
+
+/* Hamburguesa */
+
+.menu-toggle-btn {
+  margin-left: auto;
+  padding: 0.25rem;
+
+  background: transparent;
+  color: var(--white);
+
+  font-size: 1.8rem;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition: opacity 0.2s ease;
+}
+
+.menu-toggle-btn:hover {
+  color: var(--mustard);
+  opacity: 1;
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
 .hero {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 4rem 1.5rem;
+  width: 100%;
+
+  background-color: var(--sand);
+  color: var(--navy);
+
+  padding:
+    clamp(4rem, 8vw, 7rem)
+    clamp(1.5rem, 5vw, 5rem);
+
   text-align: center;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+
+/* Limita solamente el texto,
+   NO el ancho de la página */
+
+.hero-content {
+  width: 100%;
+  max-width: 1000px;
+
+  margin: 0 auto;
 }
+
+
+/* Título principal */
+
+.hero h1 {
+  margin: 0 0 1.5rem 0;
+
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  line-height: 1.08;
+  font-weight: 700;
+
+  color: var(--navy);
+}
+
+
+/* Subtítulo */
 
 .subtitle {
-  font-size: 1.1rem;
-  opacity: 0.9;
+  max-width: 800px;
+
+  margin: 0 auto 1.8rem auto;
+
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  line-height: 1.5;
+  font-weight: 600;
+
+  color: var(--brown);
 }
 
+
+/* Texto principal */
+
+.hero-description {
+  max-width: 850px;
+
+  margin: 0 auto 1rem auto;
+
+  font-size: 1rem;
+  line-height: 1.8;
+
+  color: var(--navy);
+}
+
+
+/* =========================
+   BOTÓN WHATSAPP
+   ========================= */
+
 .btn-whatsapp {
-  background-color: var(--accent-color);
-  color: white;
-  padding: 0.9rem 1.8rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
   display: inline-block;
+
   margin-top: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  transition: transform 0.2s;
+  padding: 0.9rem 1.8rem;
+
+  background-color: var(--whatsapp);
+  color: var(--white);
+
+  border-radius: 30px;
+
+  text-decoration: none;
+  font-weight: 700;
+
+  box-shadow:
+    0 4px 12px
+    rgba(37, 50, 89, 0.15);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .btn-whatsapp:hover {
-  transform: scale(1.03);
+  color: var(--white);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 16px
+    rgba(37, 50, 89, 0.22);
 }
 
-.services, .portfolio {
-  padding: 3rem 1.5rem;
-  text-align: center;
-}
 
-.services-grid, .portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
+/* =========================
+   OVERLAY DEL MENÚ
+   ========================= */
 
-.service-card, .portfolio-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-}
-
-.footer {
-  background-color: #1a231c;
-  color: white;
-  padding: 3rem 1.5rem;
-  text-align: center;
-}
-
-.portfolio-location {
-  font-size: 0.85rem;
-  color: #2d4030;
-  font-weight: 600;
-  margin-top: -0.3rem;
-  margin-bottom: 0.8rem;
-}
-
-.portfolio-card p {
-  color: var(--text-muted);
-  font-size: 0.92rem;
-  line-height: 1.6;
-  text-align: left;
-}
-
-/* Asegura que el contenedor use un buen ancho */
-.landing-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Fuerza a la imagen a no salir nunca de su tarjeta */
-.portfolio-img {
-  width: 100%;
-  max-width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-  display: block;
-}
-
-/* Ajuste de las tarjetas */
-.portfolio-card {
-  background: #ffffff;
-  padding: 1.5rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  overflow: hidden; /* Evita que las imágenes se salgan */
-  box-sizing: border-box;
-}
-
-/* Grilla adaptable */
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-  width: 100%;
-}
-
-.copyright {
-  margin-top: 2rem;
-  font-size: 0.85rem;
-  opacity: 0.6;
-}
-
-/* Header / Navbar superior */
-.navbar {
-  display: flex;
-  align-items: center;
-  padding: 1rem 1.5rem;
-  background-color: #2d4030;
-  color: white;
-  gap: 1rem;
-}
-
-.menu-toggle-btn {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-.logo-title {
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-
-/* Fondo oscuro (Overlay) */
 .menu-overlay {
   position: fixed;
+
   top: 0;
   left: 0;
+
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+
+  background-color: rgba(0, 0, 0, 0.45);
+
   z-index: 998;
 }
 
-/* Menú Lateral */
+
+/* =========================
+   MENÚ LATERAL
+   ========================= */
+
 .sidebar-menu {
   position: fixed;
+
   top: 0;
-  left: -320px;
-  width: 300px;
+  right: -340px;
+  left: auto;
+
+  width: min(320px, 85vw);
   height: 100vh;
-  background-color: #f8f9fa;
-  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
-  z-index: 999;
-  transition: left 0.3s ease-in-out;
+
   padding: 1.5rem;
+
   display: flex;
   flex-direction: column;
+
+  background-color: var(--background);
+
+  box-shadow:
+    -4px 0 20px
+    rgba(37, 50, 89, 0.18);
+
+  z-index: 999;
+
   overflow-y: auto;
+
+  transition: right 0.3s ease;
 }
 
+
+/* Cuando se abre */
+
 .sidebar-menu.open {
-  left: 0;
+  right: 0;
 }
+
+
+/* =========================
+   CABECERA SIDEBAR
+   ========================= */
 
 .sidebar-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  font-weight: bold;
-  font-size: 1.1rem;
-  margin-bottom: 1.2rem;
-  color: #2d4030;
+  justify-content: space-between;
+
+  margin-bottom: 1.5rem;
+
+  font-size: 1.15rem;
+  font-weight: 700;
+
+  color: var(--navy);
 }
+
+
+/* Botón cerrar */
 
 .close-btn {
-  background: none;
-  border: none;
+  padding: 0.25rem;
+
+  background: transparent;
+  color: var(--navy);
+
   font-size: 1.4rem;
+
   cursor: pointer;
-  color: #333;
 }
 
-/* Buscador */
+
+/* =========================
+   BUSCADOR
+   ========================= */
+
+.search-box {
+  width: 100%;
+}
+
 .search-box input {
   width: 100%;
-  padding: 0.6rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+
   margin-bottom: 1.5rem;
-  box-sizing: border-box;
+  padding: 0.75rem 0.9rem;
+
+  border: 1px solid var(--sand);
+  border-radius: 8px;
+
+  background-color: var(--white);
+  color: var(--navy);
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-/* Categorías */
-.sidebar-section-title {
-  font-size: 0.85rem;
-  font-weight: bold;
-  color: #666;
-  text-transform: uppercase;
-  margin-bottom: 0.8rem;
+.search-box input:focus {
+  border-color: var(--mustard);
+  box-shadow: 0 0 0 3px rgba(217, 190, 54, 0.25);
 }
+
+/* =========================
+   TÍTULOS DEL SIDEBAR
+   ========================= */
+
+.sidebar-section-title {
+  margin: 0 0 0.8rem 0;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  color: var(--brown);
+
+  text-transform: uppercase;
+  letter-spacing: 0.06rem;
+}
+
+
+/* =========================
+   CATEGORÍAS
+   ========================= */
 
 .sidebar-categories {
-  list-style: none;
   padding: 0;
   margin: 0;
+
+  list-style: none;
 }
 
 .sidebar-categories li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
 .sidebar-categories a {
   display: block;
-  padding: 0.7rem 0.9rem;
-  color: #333;
+
+  width: 100%;
+
+  padding: 0.75rem 0.9rem;
+
+  background-color: var(--white);
+  color: var(--navy);
+
+  border: 1px solid var(--sand);
+  border-radius: 10px;
+
   text-decoration: none;
-  border-radius: 6rem;
   font-weight: 500;
-  transition: background 0.2s;
-  border: 1px solid #eaeaea;
-  background: #ffffff;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .sidebar-categories a:hover {
-  background-color: #2d4030;
-  color: white;
+  background-color: var(--olive);
+  color: var(--white);
+  border-color: var(--olive);
 }
 
-.whatsapp-menu-link {
-  color: #25d366 !important;
-  border-color: #25d366 !important;
-  font-weight: bold;
+
+/* WhatsApp dentro del menú */
+
+.sidebar-categories .whatsapp-menu-link {
+  color: var(--whatsapp);
+  border-color: var(--whatsapp);
+  font-weight: 700;
 }
+
+.sidebar-categories .whatsapp-menu-link:hover {
+  background-color: var(--whatsapp);
+  color: var(--white);
+}
+
+
+/* Separador */
 
 .sidebar-divider {
+  width: 100%;
   height: 1px;
-  background: #ddd;
+
   margin: 1.5rem 0;
+
+  background-color: var(--sand);
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer {
+  width: 100%;
+
+  padding:
+    clamp(3rem, 6vw, 5rem)
+    clamp(1.5rem, 5vw, 5rem);
+
+  background-color: var(--brown);
+  color: var(--white);
+
+  text-align: center;
+}
+
+.footer h3 {
+  margin: 0 0 0.8rem 0;
+
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--white);
+}
+
+.footer p {
+  margin: 0 auto;
+}
+
+
+/* Copyright */
+
+.copyright {
+  margin-top: 2rem !important;
+
+  font-size: 0.85rem;
+
+  opacity: 0.7;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 0.9rem 1.25rem;
+  }
+
+  .logo-title {
+    font-size: 1.05rem;
+  }
+
+  .menu-toggle-btn {
+    font-size: 1.6rem;
+  }
+
+
+  .hero {
+    padding: 4rem 1.25rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .hero h1::after {
+  content: "";
+  display: block;
+
+  width: 70px;
+  height: 4px;
+
+  margin: 1.2rem auto 0;
+
+  background-color: var(--mustard);
+  border-radius: 10px;
+}
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+
+  .btn-whatsapp {
+    width: auto;
+
+    padding: 0.85rem 1.3rem;
+
+    font-size: 0.9rem;
+  }
+
+
+  .footer {
+    padding: 3rem 1.25rem;
+  }
+}
+
+
+/* Pantallas muy pequeñas */
+
+@media (max-width: 400px) {
+
+  .navbar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .btn-whatsapp {
+    width: 100%;
+    max-width: 320px;
+  }
 }
